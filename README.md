@@ -2,6 +2,11 @@
 
 This project create an Hadoop and Spark cluster on Amazon AWS with Terraform
 
+1. [Variables](#Variables)
+2. [Project Structure](#Project-Structure)
+3. [How to](#How-to)
+4. [See also](#See-also)
+
 ## Variables
 
 | Name           | Description                                | Default               |
