@@ -11,6 +11,7 @@ provider "aws" {
     token       = var.token
 }
 
+
 resource "aws_security_group" "Hadoop_cluster_sc" {
     name = "Hadoop_cluster_sc"
 
@@ -35,7 +36,6 @@ resource "aws_security_group" "Hadoop_cluster_sc" {
 # namenode (master)
 resource "aws_instance" "Namenode" {
     count = var.namenode_count
-    subnet_id = var.subnet_id
     ami = var.ami_image
     instance_type = var.instance_type
     key_name = var.aws_key_name
@@ -105,7 +105,6 @@ resource "aws_instance" "Namenode" {
 resource "aws_instance" "Datanode" {
     count = var.datanode_count
     ami = var.ami_image
-    subnet_id = var.subnet_id
     instance_type = var.instance_type
     key_name = var.aws_key_name
     tags = {

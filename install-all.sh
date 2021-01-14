@@ -7,7 +7,7 @@ done
 
 # install some packages
 sudo apt-get -y update
-sudo apt-get -y dist-upgrade
+#sudo apt-get -y dist-upgrade
 sudo apt-get -y install git
 sudo apt-get -y install python3
 sudo apt-get -y install python3-pip
@@ -21,7 +21,8 @@ echo '
 172.31.0.102 s02
 172.31.0.103 s03
 172.31.0.104 s04
-172.31.0.105 s05' | sudo tee --append /etc/hosts > /dev/null
+172.31.0.105 s05
+172.31.0.106 s06' | sudo tee --append /etc/hosts > /dev/null
 
 sudo chmod 700 /home/ubuntu/.ssh
 sudo chmod 600 /home/ubuntu/.ssh/id_rsa
@@ -165,7 +166,9 @@ s01' | sudo tee --append /opt/hadoop-2.7.7/etc/hadoop/masters > /dev/null
 echo '
 s02
 s03
-s04' | sudo tee /opt/hadoop-2.7.7/etc/hadoop/slaves > /dev/null
+s04
+s05
+s06' | sudo tee /opt/hadoop-2.7.7/etc/hadoop/slaves > /dev/null
 
 sudo sed -i -e 's/export\ JAVA_HOME=\${JAVA_HOME}/export\ JAVA_HOME=\/usr\/lib\/jvm\/java-8-openjdk-amd64/g' /opt/hadoop-2.7.7/etc/hadoop/hadoop-env.sh
 
@@ -201,7 +204,9 @@ export HADOOP_HOME=/opt/hadoop-2.7.7' | sudo tee --append conf/spark-env.sh > /d
 echo '
 s02
 s03
-s04' | sudo tee --append conf/slaves > /dev/null
+s04
+s05
+s06' | sudo tee --append conf/slaves > /dev/null
 
 cp conf/spark-defaults.conf.template conf/spark-defaults.conf
 
