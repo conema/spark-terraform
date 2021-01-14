@@ -38,7 +38,6 @@ variable "key_path" {
     default = "."                       # change directory to local .ssh directory e.g. ~/.ssh/
 }
 
-
 variable "aws_key_name" {
     type = string
     default = "amzkey"                  # key name, see readme

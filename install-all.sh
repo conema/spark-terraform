@@ -28,7 +28,8 @@ sudo chmod 600 /home/ubuntu/.ssh/id_rsa
 
 echo '
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH=$PATH:$JAVA_HOME/bin' | sudo tee --append /home/ubuntu/.bashrc > /dev/null
+export PATH=$PATH:$JAVA_HOME/bin
+export PYSPARK_PYTHON=python3' | sudo tee --append /home/ubuntu/.bashrc > /dev/null
 
 # install hadoop 2.7.7
 cd /opt/

@@ -1,3 +1,9 @@
+locals {
+    #  Directories start with "C:..." on Windows; All other OSs use "/" for root.
+    is_windows = substr(pathexpand("~"), 0, 1) == "/" ? false : true
+}
+
+
 provider "aws" {
     region      = var.region
     access_key  = var.access_key
@@ -28,7 +34,7 @@ resource "aws_security_group" "Hadoop_cluster_sc" {
 
 # namenode (master)
 resource "aws_instance" "Namenode" {
-    count = var.namenode
+    count = var.namenode_count
     subnet_id = var.subnet_id
     ami = var.ami_image
     instance_type = var.instance_type
@@ -61,11 +67,6 @@ resource "aws_instance" "Namenode" {
             user     = "ubuntu"
             private_key = file(var.amz_key_path)
         }
-    }
-
-    locals {
-        #  Directories start with "C:..." on Windows; All other OSs use "/" for root.
-        is_windows = substr(pathexpand("~"), 0, 1) == "/" ? false : true
     }
 
     provisioner "local-exec" {
@@ -124,11 +125,6 @@ resource "aws_instance" "Datanode" {
             user     = "ubuntu"
             private_key = file(var.amz_key_path)
         }
-    }
-
-    locals {
-        #  Directories start with "C:..." on Windows; All other OSs use "/" for root.
-        is_windows = substr(pathexpand("~"), 0, 1) == "/" ? false : true
     }
 
     provisioner "local-exec" {
