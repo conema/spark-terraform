@@ -92,7 +92,7 @@ $SPARK_HOME/sbin/start-slave.sh spark://s01:7077
 
 9. You are ready to execute your app! Execute this command on the master
 ```
-/opt/spark-3.0.1-bin-hadoop2.7/bin/spark-submit --master spark://s01:7077  --executor-cores 4 --executor-memory 14g yourfile.py
+/opt/spark-3.0.1-bin-hadoop2.7/bin/spark-submit --master spark://s01:7077  --executor-cores 2 --executor-memory 14g yourfile.py
 ```
 
 10. Remember to do `terraform destroy` to delete your EC2 instances
