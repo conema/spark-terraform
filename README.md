@@ -3,9 +3,10 @@
 This project create an Hadoop and Spark cluster on Amazon AWS with Terraform
 
 1. [Variables](#Variables)
-2. [Project Structure](#Project-Structure)
-3. [How to](#How-to)
-4. [See also](#See-also)
+2. [Software version](#Software-version)
+3. [Project Structure](#Project-Structure)
+4. [How to](#How-to)
+5. [See also](#See-also)
 
 ## Variables
 
@@ -26,6 +27,13 @@ This project create an Hadoop and Spark cluster on Amazon AWS with Terraform
 | ips            | Default private ips used for nodes         | See variables.tf      |
 | hostnames      | Default private hostnames used for nodes   | See variables.tf      |
 
+
+## Software version
+* Default AMI image: ami-0885b1f6bd170450c (Ubuntu 20.04, amd64, hvm-ssd)
+* Spark: 3.0.1
+* Hadoop: 2.7.7
+* Python: last available (currently 3.8)
+* Java: openjdk 8u275 jdk
 
 ## Project Structure
 
@@ -93,4 +101,5 @@ $SPARK_HOME/sbin/start-slave.sh spark://s01:7077
 
 
 ## See also
- * [TransE PySpark](https://github.com/conema/TransE-pyspark)
+ * [TransE PySpark](https://github.com/conema/TransE-pyspark): an application using this project
+ * [hadoop-spark-cluster-deployment](https://github.com/kostistsaprailis/hadoop-spark-cluster-deployment): the starting point of this project
