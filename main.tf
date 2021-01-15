@@ -11,7 +11,6 @@ provider "aws" {
     token       = var.token
 }
 
-
 resource "aws_security_group" "Hadoop_cluster_sc" {
     name = "Hadoop_cluster_sc"
 
@@ -97,7 +96,6 @@ resource "aws_instance" "Namenode" {
         }
 
     }
-
 }
 
 
@@ -153,5 +151,4 @@ resource "aws_instance" "Datanode" {
         }
 
     }
-
 }

@@ -48,11 +48,6 @@ variable "amz_key_path" {
     default = "amzkey.pem"
 }
 
-variable "subnet_id" {
-    type = string
-    default = "subnet-4c9f2b2a"
-}
-
 variable "namenode_count" {
     type = number
     default = 1                         # count = 1 = 1 aws EC2

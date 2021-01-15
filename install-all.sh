@@ -1,4 +1,4 @@
-!#/bin/bash
+#/bin/bash
 
 # wait that the boot finish, otherwise apt-get could fail
 until [[ -f /var/lib/cloud/instance/boot-finished ]]; do
