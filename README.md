@@ -78,16 +78,13 @@ Where `<PATH_TO_SPARK_TERRAFORM>` is the path to the /spark-terraform-master/ fo
 ssh -i <PATH_TO_SPARK_TERRAFORM>/spark-terraform-master/amzkey.pem ubuntu@<PUBLIC DNS>
  ```
 
-8. (first) execute on the master (one by one):
+8. Execute on the master (one by one):
  ```
 $HADOOP_HOME/sbin/start-dfs.sh
 $HADOOP_HOME/sbin/start-yarn.sh
 $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver' > /home/ubuntu/hadoop-start-master.sh
 $SPARK_HOME/sbin/start-master.sh
- ```
-And (after) execute on the slaves:
-```
-$SPARK_HOME/sbin/start-slave.sh spark://s01:7077
+$SPARK_HOME/sbin/start-slaves.sh spark://s01:7077
 ```
 
 9. You are ready to execute your app! Execute this command on the master
