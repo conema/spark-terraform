@@ -82,7 +82,7 @@ ssh -i <PATH_TO_SPARK_TERRAFORM>/spark-terraform-master/amzkey.pem ubuntu@<PUBLI
  ```
 $HADOOP_HOME/sbin/start-dfs.sh
 $HADOOP_HOME/sbin/start-yarn.sh
-$HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver' > /home/ubuntu/hadoop-start-master.sh
+$HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
 $SPARK_HOME/sbin/start-master.sh
 $SPARK_HOME/sbin/start-slaves.sh spark://s01:7077
 ```
